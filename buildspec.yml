@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+      - add-apt-repository ppa:cwchien/gradle
+      - apt-get -y update
+      - apt-get -y upgrade
+      - apt-get -y install gradle-4.8
+      - echo $(java -version)
+      - echo $(gradle -v)
+  build:
+    commands:
+      - echo Entered the build phase ...
+      - gradle
+      - ./gradlew jar
+
+artifacts:
+  files:
+    - build/libs/*.jar
+discard-paths: yes
