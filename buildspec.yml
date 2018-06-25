@@ -21,4 +21,5 @@ artifacts:
     - build/libs/*.jar
     - bin/*
     - config/*
+    - jmx/*
 discard-paths: yes
